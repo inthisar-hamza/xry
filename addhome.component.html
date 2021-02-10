@@ -1,0 +1,363 @@
+<div class="section-header text-center">
+    <h2>Add Home</h2>
+</div>
+
+<div class="content" style="padding: 0!important;">
+    <div class="container" style="padding: 0!important;">
+        <div class="row justify-content-center" style="padding: 0!important;">
+            <form >
+                <div class="col-lg-12">
+                  
+                    <form>
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Enter Details</h3>
+                            <div class="row">
+                                <div class="col-lg-12" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Title <span class="text-danger">*</span></label>
+                                        <input formControlName="title" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Type <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="housetype" width="100%">
+                                            <option *ngFor="let item of HouseType">{{item}}</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Publisher <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="publisher" width="100%">
+                                            <option *ngFor="let item of publisher">{{item}}</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Area Size <span class="text-danger">*</span></label>
+                                        <input formControlName="areasize" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Area Measurement <span class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" formControlName="areatype" type="radio" name="areatype" id="Perches"
+                                                value="Perches">
+                                            <label class="form-check-label" for="Perches">
+                                                Perches
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" formControlName="areatype" type="radio" name="areatype" id="Acres"
+                                                value="Acres">
+                                            <label class="form-check-label" for="Acres">
+                                                Acres
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Price <span class="text-danger">*</span></label>
+                                        <input formControlName="price" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Price Type <span class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" formControlName="pricetype" type="radio" name="pricetype"
+                                                id="exampleRadios1" value="Million">
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Million
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" formControlName="pricetype" type="radio" name="pricetype"
+                                                id="exampleRadios2" value="Rs.">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Rs.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Price negotiable<span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="negotiation" width="100%">
+                                            <option value="1">yes</option>
+                                            <option value="0">no</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Price is for <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="pricefor" width="100%">
+                                            <option *ngFor="let item of priceFor">{{item}}</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Availability <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="availability" width="100%">
+                                            <option *ngFor="let item of availability">{{item}}</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Youtube Link(if available)</label>
+                                        <input formControlName="youtube" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>Descriptions <span class="text-danger">*</span></label>
+                                        <textarea formControlName="description" class="form-control service-desc"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Enter Property Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Rooms Count <span class="text-danger">*</span></label>
+                                        <input formControlName="roomscount" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Bathrooms Count <span class="text-danger">*</span></label>
+                                        <input formControlName="bathroomscount" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Floors Count <span class="text-danger">*</span></label>
+                                        <input formControlName="floorscount" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Parking Space Available <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="parkingspace" width="100%">
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Total Floors Area <span class="text-danger">*</span></label>
+                                        <input formControlName="floorarea" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="property">
+                                        <label>Property Age <span class="text-danger">*</span></label>
+                                        <input formControlName="propertyage" class="form-control" type="text">
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Property Features</h3>
+                            <div class="row">
+                                <div class="col-lg-12">
+                        
+                        
+                        
+                                    <div [formGroup]="personForm">
+                        
+                        
+                                        <div *ngFor="let hobby of personForm.get('propertFeature')['controls']; let i=index;"
+                                            class="form-check form-check-inline" style="padding:10px">
+                                            <input [formControl]="hobby" (change)="getSelectedHobbies(hobby, propertyFeatures[i]);"
+                                                class="form-check-input" type="checkbox" id={{propertyFeatures[i]}}
+                                                value={{propertyFeatures[i]}} [checked]="true" checked [attr.checked]="true">
+                                            {{propertyFeatures[i]}}
+                                        </div>
+                        
+                                    </div>
+                        
+                        
+                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Location Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        <label>City <span class="text-danger">*</span></label>
+                                        <input formControlName="city" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        <label>Street <span class="text-danger">*</span></label>
+                                        <input formControlName="street" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        <label>Province <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="province" width="100%">
+                                            <option *ngFor="let item of province">{{item}}</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                       
+                                            <label>Lattitude <span class="text-danger">*</span></label>
+                                            <input formControlName="latitude" class="form-control" type="text">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        
+                                            <label>Longtitude <span class="text-danger">*</span></label>
+                                            <input formControlName="longitude" class="form-control" type="text">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        
+                                            <label>Nearest Train Station Distance (in Meters)<span class="text-danger">*</span></label>
+                                            <input formControlName="nearesttrain" class="form-control" type="text">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="location">
+                                        
+                                            <label>Nearest Bus Stand Distance (in Meters) <span class="text-danger">*</span></label>
+                                            <input formControlName="nearestbus" class="form-control" type="text">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Contact Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        <label>Contact Name <span class="text-danger">*</span></label>
+                                        <input formControlName="contactname" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input [readonly]="true" formControlName="email" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        
+                                            <label>Contact Number 1 <span class="text-danger">*</span></label>
+                                            <input formControlName="contactnumber1" class="form-control" type="text">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        
+                                            <label>Contact Number 2 <span class="text-danger">*</span></label>
+                                            <input formControlName="contactnumber2" class="form-control" type="text">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        <label>Social Media(whatsapp/viber/telegram) <span class="text-danger">*</span></label>
+                                        <ng-select2 formControlName="socialMedia" width="100%">
+                                            <option value="1">yes</option>
+                                            <option value="0">no</option>
+                                        </ng-select2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="contact">
+                                        
+                                            <label>Facebook ID<span class="text-danger">*</span></label>
+                                            <input formControlName="facebook" class="form-control" type="text">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" [formGroup]="detailsform">
+                                    <div class="form-group" formGroupName="post">
+                                        <label>AgentID (For agents to identify post with ref no)</label>
+                                        <input formControlName="agentid" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        
+                        <div class="service-fields mb-3">
+                            <h3 class="heading-2">Service Gallery </h3>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ngx-dropzone ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                                        <ngx-dropzone-label>Drop files here to upload</ngx-dropzone-label>
+                                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
+                                            *ngFor="let f of files" [file]="f" [removable]="true"
+                                            (removed)="onRemove(f)">
+                                        </ngx-dropzone-image-preview>
+                                    </ngx-dropzone>
+                                    <div>
+                                        <ul class="upload-wrap">
+                                            <li *ngFor="let item of imageArray ">
+                                                <div class="upload-images">
+                                                    <img alt="Service Image" src="http://localhost:3000/uploads/homeads/{{adsID}}/{{item.url}}">
+                                                    <a (click)="deleteImage(item)"
+                                                        class="btn btn-icon btn-danger btn-sm"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submit-section">
+                            <button (click)="SubmitHome()" class="btn btn-primary">Save</button>
+                            <button class="btn btn-primary submit-btn" type="button" (click)="submit()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
